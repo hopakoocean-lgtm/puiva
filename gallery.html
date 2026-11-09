@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>培華中學 - 官方網站</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --text-color: #1f2937;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --nav-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: var(--nav-bg);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-color);
+    }
+    main { flex: 1; }
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .hero {
+      position: relative;
+      height: 60vh;
+      min-height: 380px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      transition: background-image 0.5s ease-in-out;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      opacity: 0.95;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+    .intro-box {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .intro-box p {
+      font-size: 1.1rem;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--card-bg);
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2rem; }
+      .nav-container { padding: 1rem; }
+      .intro-box { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">培華中學</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">學校首頁</a></li>
+        <li><a href="gallery.html">校園采風</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="heroBanner">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>培華中學</h1>
+        <p>立德樹人・培英育華</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="intro-box">
+        <h2 class="section-title">學校簡介</h2>
+        <p>
+          歡迎蒞臨培華中學官方網站。本校秉持優良教育傳統，致力於提供全人教育與優質的學習環境。每一次重新整理頁面，上方大圖將隨機呈現我們美麗的校園景致與精彩的校園生活風貌。
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 培華中學 Pei Hua Middle School. 版權所有</p>
+  </footer>
+
+  <script>
+    const bannerImages = [
+      'img/photo1.jpg',
+      'img/photo2.jpg',
+      'img/photo3.jpg',
+      'img/photo4.jpg',
+      'img/photo5.jpg',
+      'img/photo6.jpg',
+      'img/photo7.jpg',
+      'img/photo8.jpg',
+      'img/photo9.jpg'
+    ];
+    const randomImg = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    document.getElementById('heroBanner').style.backgroundImage = `url('${randomImg}')`;
+  </script>
+</body>
+</html>
